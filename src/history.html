@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="منصة نشر المحتوى المرئي">
+    <title>YouTube | السجل</title>
+    <link rel="icon" href="./img/icons/youtube.png">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+    <div class="layer"></div>
+    <div class="black-layer"></div>
+    <div id="top-menu">
+        <div class="right">
+            <div class="bar">
+                <a href="#">
+                    <i class="material-icons">menu</i>
+                </a>
+            </div>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/logo.png" alt="youtube logo" />
+                </a>
+            </div>
+        </div>
+        <div class="search">
+            <i class="material-icons" id="search-back">arrow_forward</i>
+            <span>
+                <input type="text" placeholder="بحث">
+                <a href="#" class="keyboard">
+                    <i class="material-icons">keyboard</i>
+                </a>
+            </span>
+            <button  onclick="location.href = 'search.html';">
+                <i class="material-icons">search</i>
+            </button>
+        </div>
+        <div class="options">
+            <div id="search-icon">
+                <i class="material-icons icon">search</i>
+            </div>
+            <div id="add-video-icon">
+                <i class="material-icons icon">video_call</i>
+                <div class="popup" id="add-video-list">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <i class="material-icons">featured_video</i>
+                                <span>تحميل فيديو</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="material-icons icon">airplay</i>
+                                <span>بث محتوى مباشر</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="apps-icon">
+                <i class="material-icons icon">apps</i>
+                <div class="popup" id="apps-list">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <i class="material-icons red-icon">ondemand_video</i>
+                                <span>YouTube TV</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="material-icons red-icon">games</i>
+                                <span>YouTube Gaming</span>
+                            </a>
+                        </li>
+                        <hr>
+                        <li>
+                            <a href="#">
+                                <i class="material-icons red-icon">library_music</i>
+                                <span>للموسيقى YouTube</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="material-icons red-icon">face</i>
+                                <span>للأطفال YouTube</span>
+                            </a>
+                        </li>
+                        <hr>
+                        <li>
+                            <a href="#">
+                                <i class="material-icons red-icon">play_circle_filled</i>
+                                <span>أكاديمية منشئ المحتوى</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="material-icons red-icon">play_circle_filled</i>
+                                <span>للفنانين YouTube</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="setting-icon">
+                <i class="material-icons icon">more_vert</i>
+                <div class="popup" id="setting-list">
+                    <ul>
+                        <li>
+                            <a id="colors-link" href="#">
+                                <i class="material-icons">brightness_4</i>
+                                <span>مظهر الألوان الداكنة:
+                                    <span id="colors-value">متوقف</span>
+                                </span>
+                                <i class="material-icons arrow">chevron_left</i>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="languages-link" href="#">
+                                <i class="material-icons">translate</i>
+                                <span>اللغة:
+                                    <span id="languages-value">العربية</span>
+                                </span>
+                                <i class="material-icons arrow">chevron_left</i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="material-icons">settings</i>
+                                <span>الإعدادات</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="material-icons">help</i>
+                                <span>مساعدة</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="material-icons">feedback</i>
+                                <span>تعليقات</span>
+                            </a>
+                        </li>
+                        <hr />
+                        <li>
+                            <a id="locations-link" href="#">
+                                <span>الموقع:لبنان</span>
+                                <i class="material-icons arrow">chevron_left</i>
+                            </a>
+                        </li>
+                        <li>
+                            <a id="restriction-link" href="#">
+                                <span>وضع تقييد المحتوى:متوقف</span>
+                                <i class="material-icons arrow">chevron_left</i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="colors" class="popup card">
+                    <div class="card-header">
+                        <a href="#">
+                            <i class="material-icons colors-back">arrow_forward</i>
+                        </a>
+                        <div>مظهر الألوان الداكنة</div>
+                    </div>
+                    <div class="card-body">
+                        يحوّل مظهر الألوان الداكنة المناطق الفاتحة من الصفحة إلى مناطق معتمة، ما يجعله مثاليًا للاستخدام أثناء الليل. ننصحك بتجربته.
+                        <br>
+                        <br> يمكن تطبيق إعداد مظهر الألوان الداكنة على هذا المتصفّح فقط.
+                    </div>
+                    <div class="card-footer">
+                        <div class="right">
+                            <span>مظهر الألوان الداكنة</span>
+                        </div>
+                        <div class="left">
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="languages" class="popup card">
+                    <div class="card-header">
+                        <a href="#">
+                            <i class="material-icons languages-back">arrow_forward</i>
+                        </a>
+                        <div>اختر لغتك</div>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li>
+                                <a href="#">العربية</a>
+                            </li>
+                            <li>
+                                <a href="#">English</a>
+                            </li>
+                            <li>
+                                <a href="#">French</a>
+                            </li>
+                            <li>
+                                <a href="#">Turkish</a>
+                            </li>
+                            <li>
+                                <a href="#">Spanish</a>
+                            </li>
+                            <li>
+                                <a href="#">portuguese</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="locations" class="popup card">
+                    <div class="card-header">
+                        <a href="#">
+                            <i class="material-icons locations-back">arrow_forward</i>
+                        </a>
+                        <div>اختيار موقعك</div>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li>
+                                <a href="#">سوريا</a>
+                            </li>
+                            <li>
+                                <a href="#">لبنان</a>
+                            </li>
+                            <li>
+                                <a href="#">مصر</a>
+                            </li>
+                            <li>
+                                <a href="#">تركيا</a>
+                            </li>
+                            <li>
+                                <a href="#">فرنسا</a>
+                            </li>
+                            <li>
+                                <a href="#">ألمانيا</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="restriction" class="popup card">
+                    <div class="card-header">
+                        <a href="#">
+                            <i class="material-icons restriction-back">arrow_forward</i>
+                        </a>
+                        <div>وضع تقييد المحتوى</div>
+                    </div>
+                    <div class="card-body">
+                        يُخفي وضع تقييد المحتوى فيديوهات يُحتمل أن تتضمن محتوى غير ملائم أبلغ عنه المستخدمون أو تم الكشف عنه عبر إشارات أخرى. ما
+                        من فلتر دقيق بالكامل، ولكن يُفترض أن يساعد هذا الوضع في تجنّب معظم المحتويات غير الملائمة.
+                        <br>
+                        <br> سينطبق إعداد وضع تقييد المحتوى على هذا المتصفح فقط.
+                    </div>
+                    <div class="card-footer">
+                        <div class="right">
+                            <span>تفعيل وضع تقييد المحتوى</span>
+                        </div>
+                        <div class="left">
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="login">
+                تسجيل الدخول
+            </a>
+        </div>
+    </div>
+    <div class="content">
+        <div id="side-menu">
+            <div class="side-menu-header">
+                <div class="bar">
+                    <a href="#">
+                        <i class="material-icons">menu</i>
+                    </a>
+                </div>
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/logo.png" alt="youtube logo" />
+                    </a>
+                </div>
+            </div>
+            <ul>
+                <li>
+                    <a href="/">
+                        <i class="material-icons active">home</i>
+                        <span>الصفحة الرئيسية</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="material-icons">whatshot</i>
+                        <span>المحتويات الرائجة</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="history.html">
+                        <i class="material-icons">history</i>
+                        <span>سجل المشاهدة</span>
+                    </a>
+                </li>
+            </ul>
+            <hr>
+            <ul class="best">
+                <li>
+                    <span class="title">أفضل مافي YOUTUBE</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="material-icons red-icon">music_note</i>
+                        <span>موسيقى</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="material-icons red-icon">blur_circular</i>
+                        <span>ألعاب رياضية</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="material-icons red-icon">videogame_asset</i>
+                        <span>ألعاب</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="material-icons red-icon">live_tv</i>
+                        <span>أخبار</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="material-icons red-icon">track_changes</i>
+                        <span>مباشر</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="material-icons red-icon">360</i>
+                        <span>فيديو بنطاق 360 درجة</span>
+                    </a>
+                </li>
+            </ul>
+            <hr>
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="material-icons plus">add_circle</i>
+                        <span>تصفح القنوات</span>
+                    </a>
+                </li>
+            </ul>
+            <hr>
+            <div class="login">
+                تسجيل الدخول لرؤية القنوات والتوصيات
+                <br>
+                <br>
+                <a href="#">تسجيل الدخول</a>
+            </div>
+            <hr>
+            <ul class="options">
+                <li>
+                    <a href="#">
+                        <i class="material-icons">settings</i>
+                        <span>الإعدادات</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="material-icons">flag</i>
+                        <span>سجل عمليات الإبلاغ</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="material-icons">help</i>
+                        <span>مساعدة</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="material-icons">insert_comment</i>
+                        <span>إرسال تعليقات</span>
+                    </a>
+                </li>
+            </ul>
+            <hr>
+            <div class="copyright">
+                © 2018 YouTube, LLC
+            </div>
+        </div>
+
+        <div class="main-content" id="history-page">
+            <div class="search-filters">
+                <div class="search-field-container">
+                    <i class="material-icons search-icon">search</i>
+                    <input type="text" class="search-field" placeholder="البحث في سجل المشاهدة">
+                    <i class="material-icons close-icon">close</i>
+                </div>
+                <div class="filters">
+                    <div class="filter">
+                        <label class="container">نوع السجل</label>
+                    </div>
+                    <div class="filter">
+                        <label class="container">
+                            سجل المشاهدة
+                            <input type="radio" checked="checked" name="radio">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="filter">
+                        <label class="container">
+                            سجل البحث
+                            <input type="radio" name="radio">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="filter">
+                        <label class="container">
+                            التعليقات
+                            <input type="radio" name="radio">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="filter">
+                        <label class="container">
+                            المنتدى
+                            <input type="radio" name="radio">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="filter">
+                        <label class="container">
+                            Live chat
+                            <input type="radio" name="radio">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="options">
+                    <a href="#">محو سجل المشاهدة بالكامل</a>
+                    <a href="#">إيقاف سجل العرض مؤقتاً</a>
+                    <a href="#">إدارة كلّ الأنشطة</a>
+                </div>
+            </div>
+            <div class="videos">
+                <div class="result video-card ">
+                    <div class="right video-thumbnail">
+                        <a href="watch.html">
+                            <i class="material-icons oclock">access_time</i>
+                            <img class="thumbnail" src="img/thumbnail/7.jpg" alt="video thumbnail">
+                            <div class="time">21:34</div>
+                        </a>
+                    </div>
+                    <div class="details">
+                        <i class="material-icons remove">close</i>
+                        <a class="title" href="watch.html">
+                            كيف تستخدم أدوات المطوِّر DevTools في Chrome
+                        </a>
+                        <div class="info">
+                            <a href="channel.html">أكاديمية حسوب</a>
+                            <span>176 مشاهدة</span>
+                        </div>
+                        <div class="description">
+                            نتعرف في هذا الدرس على أدوات المطور DevTools التي يتيحها متصفح google chrome والتي تمكنك من تتبع مشاكل التنسيق CSS بفعالية،
+                            واكتشاف أخطاء Javascript بسهولة، بالإضافة إلى أنها تقدم لك إضاءات ومعلومات حول أداء الموقع.
+                        </div>
+                    </div>
+                </div>
+                <div class="result video-card ">
+                    <div class="right video-thumbnail">
+                        <a href="watch.html">
+                            <i class="material-icons oclock">access_time</i>
+                            <img class="thumbnail" src="img/thumbnail/8.jpg" alt="video thumbnail">
+                            <div class="time">21:34</div>
+                        </a>
+                    </div>
+                    <div class="details">
+                        <i class="material-icons remove">close</i>
+                        <a class="title" href="watch.html">
+                            التطبيقات الهجينة Hybrid Apps والتطبيقات الأصيلة Native Apps
+                        </a>
+                        <div class="info">
+                            <a href="channel.html">أكاديمية حسوب</a>
+                            <span>239 مشاهدة</span>
+                        </div>
+                        <div class="description">
+                            التطبيقات الهجينة Hybrid Apps والتطبيقات الأصيلة Native Apps
+                        </div>
+                    </div>
+                </div>
+                <div class="result video-card ">
+                    <div class="right video-thumbnail">
+                        <a href="watch.html">
+                            <i class="material-icons oclock">access_time</i>
+                            <img class="thumbnail" src="img/thumbnail/9.jpg" alt="video thumbnail">
+                            <div class="time">21:34</div>
+                        </a>
+                    </div>
+                    <div class="details">
+                        <i class="material-icons remove">close</i>
+                        <a class="title" href="watch.html">
+                            شرح لغة استعلام قواعد البيانات SQL بالأمثلة العملية
+                        </a>
+                        <div class="info">
+                            <a href="channel.html">أكاديمية حسوب</a>
+                            <span>788 مشاهدة</span>
+                        </div>
+                        <div class="description">
+                            سنشرح في هذا الدرس أساسيات لغة الاستعلام SQL عبر الأمثلة العملية وذلك باستخدام لوحة التحكم phpMyAdmin.
+                        </div>
+                    </div>
+                </div>
+                <div class="result video-card ">
+                    <div class="right video-thumbnail">
+                        <a href="watch.html">
+                            <i class="material-icons oclock">access_time</i>
+                            <img class="thumbnail" src="img/thumbnail/10.jpg" alt="video thumbnail">
+                            <div class="time">21:34</div>
+                        </a>
+                    </div>
+                    <div class="details">
+                        <i class="material-icons remove">close</i>
+                        <a class="title" href="watch.html">
+                            تعرّف على لغة البرمجة Ruby
+                        </a>
+                        <div class="info">
+                            <a href="channel.html">أكاديمية حسوب</a>
+                            <span>176 مشاهدة</span>
+                        </div>
+                        <div class="description">
+                            تم تطوير لغة روبي بالأساس بهدف جعل ممارسة البرمجة أمرًا ممتعا للمبرمج. وهي تحظى بشعبية كبيرة في مجال تطوير الويب، فعبر إطار
+                            العمل Ruby on Rails يمكن للمطور البدء في بناء هيكلية الموقع وتنفيذ فكرته ورؤية النتائج عبر بضع
+                            أوامر، حيث أحدثَ إطار العمل ريلز نقلة نوعية في مفاهيم وتطبيقات الويب، ويوفر إطار العمل RoR الكثير
+                            من الأدوات التي تجعل من تطوير تطبيقات الويب أمرًا يسيرًا ومنظمًا.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/history.js"></script>
+</body>
+</html>

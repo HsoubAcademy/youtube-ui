@@ -1,0 +1,21 @@
+{
+  "name": "youtube",
+  "version": "1.0.0",
+  "description": "youtube clone",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "youtube"
+  ],
+  "author": "Mohammed Alhaj KHalaf",
+  "license": "ISC",
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.4",
+    "gulp-connect": "^5.5.0",
+    "gulp-uglify": "^3.0.0"
+  }
+}
